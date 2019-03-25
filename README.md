@@ -12,7 +12,7 @@ Sample requests:
 
 GET:
 
-'URL/computerparts/:part'
+**'URL/computerparts/:part'**
 
   //returns all the entries of the given part
 
@@ -34,9 +34,8 @@ GET:
 
   URL/computerparts/videocard
 
-----------------------
 
-'URL/computerpars/:part/:id
+**'URL/computerpars/:part/:id**
 
   //returns the entry of the part with the given id
 
