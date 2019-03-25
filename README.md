@@ -32,6 +32,7 @@ GET:
 
   URL/computerparts/videocard
 
+----------------------
 
 'URL/computerpars/:part/:id
 
