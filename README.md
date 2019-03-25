@@ -35,6 +35,7 @@ GET:
   URL/computerparts/videocard
 
 
+
 **'URL/computerpars/:part/:id**
 
   //returns the entry of the part with the given id
