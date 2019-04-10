@@ -5,10 +5,10 @@ const app = express()
 const db = require('./config/db')
 const key= require('./config/key')
 const port = 3000;
-
-
+const cors = require('cors')
+app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({extended:true}))
-
+app.use(cors())
 
 
  MongoClient.connect(db.url,(err,database)=>{

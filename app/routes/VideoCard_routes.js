@@ -1,22 +1,32 @@
-var ObjectID= require('mongodb').ObjectID
-module.exports = function(app,db,key){
-  app.post('/computerparts/videocard/:key',(req,res)=>{
-    if (req.params.key===key){
-    const OBJ={name:req.body.name,chipset:req.body.chipset,price:req.body.price,memory:req.body.memory,picture:req.body.picture,color:req.body.color,coreclock:req.body.coreclock}
-    db.collection('VIDEOCARD').insert(OBJ,(err,results)=>{
-      if(err){
-        res.send({'error':'An error has occured'})
-      }
-      else{
-        console.log("posted!")
-        res.send(results.ops[0])
-      }
-    })
-  }//if key correct
-  else{
-    res.send({'error': 'Cannot make a post request from your current url, please make a post request at ____'})
-  }
-  })
+var ObjectID = require("mongodb").ObjectID;
+module.exports = function(app, db, key) {
+  app.post("/computerparts/videocard/:key", (req, res) => {
+    if (req.params.key === key) {
+      const OBJ = {
+        Name: req.body.theBody.Name,
+        chipSet: req.body.theBody.chipSet,
+        Price: req.body.theBody.Price,
+        Memory: req.body.theBody.Memory,
+        Picture: req.body.theBody.Picture,
+        Color: req.body.theBody.Color,
+        coreClock: req.body.theBody.coreClock
+      };
+      db.collection("VIDEOCARD").insert(OBJ, (err, results) => {
+        if (err) {
+          res.send({ error: "An error has occured" });
+        } else {
+          console.log("posted!");
+          res.send(results.ops[0]);
+        }
+      });
+    } //if key correct
+    else {
+      res.send({
+        error:
+          "Cannot make a post request from your current url, please make a post request at ____"
+      });
+    }
+  });
 
   // app.put('/ROUTE/:id',(req,res)=>{
   //   const id= req.params.id
@@ -33,30 +43,30 @@ module.exports = function(app,db,key){
   //   })
   // })
 
-  app.get('/computerparts/videocard/:id',(req,res)=>{
-    const id= req.params.id
-    const details={'_id':new ObjectID(id)}
-    db.collection('VIDEOCARD').findOne(details,(err,item)=>{
-      if(err){
-        res.send({'error':'An error has occured'})
+  app.get("/computerparts/videocard/:id", (req, res) => {
+    const id = req.params.id;
+    const details = { _id: new ObjectID(id) };
+    db.collection("VIDEOCARD").findOne(details, (err, item) => {
+      if (err) {
+        res.send({ error: "An error has occured" });
+      } else {
+        console.log("Got!");
+        res.send(item);
       }
-      else{
-        console.log("Got!")
-        res.send(item)
-      }
-    })
-  })
+    });
+  });
 
-  app.get('/computerparts/videocard',(req,res)=>{
-    db.collection('VIDEOCARD').find().toArray((err,item)=>{
-      if(err){
-        res.send({'error':'An error has occured'})
-      }
-      else{
-        res.send(item)
-      }
-    })
-  })
+  app.get("/computerparts/videocard", (req, res) => {
+    db.collection("VIDEOCARD")
+      .find()
+      .toArray((err, item) => {
+        if (err) {
+          res.send({ error: "An error has occured" });
+        } else {
+          res.send(item);
+        }
+      });
+  });
 
   // app.delete('/ROUTE/:id',(req,res)=>{
   //   const id= req.params.id
@@ -71,4 +81,4 @@ module.exports = function(app,db,key){
   //     }
   //   })
   // })
-}
+};
