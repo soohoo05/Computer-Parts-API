@@ -1,0 +1,8 @@
+
+{
+    "version": 2,
+    "name": "Comp-Parts-API",
+    "builds": [
+        { "src": "*.js", "use": "@now/node" }
+    ]
+}
