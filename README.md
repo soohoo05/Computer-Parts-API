@@ -3,7 +3,7 @@
 
 This is a Crowdsourced API that hosts information regarding computer parts.
 
-The url you can make requests on is the following :TBD
+The url you can make requests on is the following :https://comppartsapi.herokuapp.com/
 
 ----------------------
 
