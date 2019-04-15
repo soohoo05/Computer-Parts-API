@@ -1,13 +1,7 @@
-<<<<<<< HEAD
+{
 
-{
-    "version": 2,
-    "name": "Comp-Parts-API",
-=======
-{
     "version": 2,
     "name": "nodejs",
->>>>>>> cfed1d249d7bc3033387ecec5ff1eabb014d8717
     "builds": [
         { "src": "*.js", "use": "@now/node" }
     ]
